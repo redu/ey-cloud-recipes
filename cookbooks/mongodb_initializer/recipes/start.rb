@@ -1,10 +1,6 @@
-execute "enable mongodb" do
-  command "rc-update add mongodb default"
-  action :run
-end
-
 execute "start mongodb" do
-  command "/etc/init.d/mongodb restart"
+  Chef::Log.info "Executing Mondodb"
+  command "/tmp/mongodb-linux-i686-2.0.4/bin/mongod"
+  Chef::Log.info "Mongodb executed"
   action :run
-  not_if "/etc/init.d/mongodb status"
 end
