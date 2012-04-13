@@ -3,5 +3,5 @@
 # Recipe:: default
 #
 
-require_recipe "mongodb_initializer::intall"
+require_recipe "mongodb_initializer::install"
 require_recipe "mongodb_initializer::start"
