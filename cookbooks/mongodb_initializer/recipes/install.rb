@@ -11,3 +11,7 @@ execute "untar /tmp/mongodb-linux-i686-2.0.4.tgz" do
   command "cd /tmp; tar zxf mongodb-linux-i686-2.0.4.tgz -C /opt"
   not_if { FileTest.directory?("/opt/mongodb-linux-i686-2.0.4") }
 end
+
+execute "" do
+  command "ln -s /opt/mongodb-linux-i686-2.0.4/bin/mongodump ./usr/bin/mongodump"
+end
