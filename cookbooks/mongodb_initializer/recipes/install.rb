@@ -13,5 +13,5 @@ execute "untar /tmp/mongodb-linux-i686-2.0.4.tgz" do
 end
 
 execute "" do
-  command "ln -s /opt/mongodb-linux-i686-2.0.4/bin/mongodump ./usr/bin/mongodump"
+  command "ln -s /opt/mongodb-linux-i686-2.0.4/bin/mongodump /usr/bin/mongodump"
 end
