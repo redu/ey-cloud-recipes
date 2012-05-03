@@ -12,7 +12,15 @@ execute "untar /tmp/mongodb-linux-i686-2.0.4.tgz" do
   not_if { FileTest.directory?("/opt/mongodb-linux-i686-2.0.4") }
 end
 
-execute "" do
+execute "creating a symbolik link" do
   command "ln -s /opt/mongodb-linux-i686-2.0.4/bin/mongodump /usr/bin/mongodump"
   not_if { FileTest.exists?("/usr/bin/mongodump") }
+end
+
+execute "start mongodb" do
+  Chef::Log.info "Executing Mongodb"
+  command "sudo /opt/mongodb-linux-i686-2.0.4/bin/mongod --repair"
+  command "sudo /opt/mongodb-linux-i686-2.0.4/bin/mongod --fork --logpath /var/log/mongodb.log --logappend"
+  Chef::Log.info "Mongodb executed"
+  action :run
 end

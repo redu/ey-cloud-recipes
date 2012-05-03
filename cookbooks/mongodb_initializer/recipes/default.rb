@@ -4,4 +4,3 @@
 #
 
 require_recipe "mongodb_initializer::install"
-require_recipe "mongodb_initializer::start"
