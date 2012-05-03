@@ -14,4 +14,5 @@ end
 
 execute "" do
   command "ln -s /opt/mongodb-linux-i686-2.0.4/bin/mongodump /usr/bin/mongodump"
+  not_if { FileTest.exists?("/usr/bin/mongodump") }
 end
