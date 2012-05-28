@@ -20,7 +20,8 @@ execute "creating a symbolik link" do
   not_if { FileTest.exists?("/usr/bin/mongodump") }
 end
 
-execute "/o/" do
+execute "repairing mongo instance" do
+  Chef::Log.info "Repair mongo instance"
   command "sudo /opt/mongodb-linux-i686-2.0.4/bin/mongod --repair"
 end
 
