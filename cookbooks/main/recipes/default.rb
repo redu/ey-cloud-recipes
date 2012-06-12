@@ -49,6 +49,8 @@ require_recipe "mongodb_initializer"
 
 #require_recipe "logrotate"
 #
+#uncomment to use the s3cmd recipe
+require_recipe "s3cmd"
 #uncomment to use the solr recipe
 #require_recipe "solr"
 
